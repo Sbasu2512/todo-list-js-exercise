@@ -39,6 +39,11 @@ const task2 = newTask("Do Laundry", "🧼  the clothes & dry them"); // task 1
 const tasks = [task1,task2];
 
 console.log(tasks)
-logTaskState(0); // Clean Cat Litter has not been completed
-completeTask(0);
-logTaskState(0); // Clean Cat Litter has been completed
+
+logTaskState(task1); // Clean Cat Litter has not been completed
+completeTask(task1);
+logTaskState(task1); // Clean Cat Litter has been completed
+
+logTaskState(task2); // Do laundry has not been completed
+completeTask(task2);
+logTaskState(task2); // Do laundry Litter has been completed
