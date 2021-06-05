@@ -46,10 +46,10 @@ const task1 = newTask("Clean Cat Litter", "Take all the 💩 out and refill 🗑
 const task2 = newTask("Do Laundry", "🧼  the clothes & dry them"); // task 1
 const tasks = [task1,task2];
 
-task1.logTaskState();
-task1.complete();
-task1.logTaskState();
-
-task2.logTaskState();
-task2.complete();
-task2.logTaskState();
+const before = task1.logTaskState();
+task1.completeTask();
+const after = task1.logTaskState();
+console.log(before, after);
+// task2.logTaskState();
+// task2.complete();
+// task2.logTaskState();
