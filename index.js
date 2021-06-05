@@ -10,7 +10,15 @@ function newTask(title, description) {
   const task = {
     title: title,
 description: description,
-complete: false
+complete: false,
+
+logTaskState: function (){
+return `${this.title} has ${this.complete ? " " : " not "}been completed`
+},
+
+completeTask: function(){
+  this.complete = true;
+}
   };
   return task;
   // taskTitles.push(title);
@@ -21,16 +29,16 @@ complete: false
 }
 
 //Mark a task as complete by setting the task's status in the `taskComplete` array to `true`
-function completeTask(task) {
-  task.complete = true;
-}
+// function completeTask(task) {
+//   task.complete = true;
+// }
 
-//Print the state of a task to the console in a nice readable way
-function logTaskState(task) {
-  const title = task.title;
-  const complete = task.complete ;
-  console.log(`${title} has${complete ? " " : " not "}been completed`);
-}
+// //Print the state of a task to the console in a nice readable way
+// function logTaskState(task) {
+//   const title = task.title;
+//   const complete = task.complete ;
+//   console.log(`${title} has${complete ? " " : " not "}been completed`);
+// }
 
 // DRIVER CODE BELOW
 
@@ -38,12 +46,10 @@ const task1 = newTask("Clean Cat Litter", "Take all the 💩 out and refill 🗑
 const task2 = newTask("Do Laundry", "🧼  the clothes & dry them"); // task 1
 const tasks = [task1,task2];
 
-console.log(tasks)
+task1.logTaskState();
+task1.complete();
+task1.logTaskState();
 
-logTaskState(task1); // Clean Cat Litter has not been completed
-completeTask(task1);
-logTaskState(task1); // Clean Cat Litter has been completed
-
-logTaskState(task2); // Do laundry has not been completed
-completeTask(task2);
-logTaskState(task2); // Do laundry Litter has been completed
+task2.logTaskState();
+task2.complete();
+task2.logTaskState();
